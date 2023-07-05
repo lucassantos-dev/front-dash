@@ -7,10 +7,6 @@ interface Props {
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 	value: string;
 	children: React.ReactNode;
-	link?: {
-		linkText: string;
-		linkUrl: string;
-	};
 	required?: boolean;
 }
 
@@ -20,7 +16,6 @@ export default function Input({
 	onChange,
 	value,
 	children,
-	link,
 	required = false,
 }: Props) {
 	return (
@@ -32,21 +27,13 @@ export default function Input({
 				>
 					{children}
 				</label>
-				{link && (
-					<div className='text-sm'>
-						<Link
-							className='font-semibold text-indigo-600 hover:text-indigo-500'
-							href={link.linkUrl}
-						>
-							{link.linkText}
-						</Link>
-					</div>
-				)}
+				
 			</div>
 			<div className='mt-2'>
 				<input
 					id={labelId}
-					className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+					className='block w-full rounded-2xl bg-slate-100 px-3 py-2 transition-colors 
+					duration-200  hover:bg-blue-200  focus:bg-blue-200 focus:outline-none'
 					name={labelId}
 					type={type}
 					onChange={onChange}

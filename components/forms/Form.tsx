@@ -38,7 +38,7 @@ export default function Form({
 					type={input.type}
 					onChange={onChange}
 					value={input.value}
-					link={input.link}
+		
 					required={input.required}
 				>
 					{input.labelText}
@@ -48,7 +48,7 @@ export default function Form({
 			<div>
 				<button
 					type='submit'
-					className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+					className='flex w-full justify-center rounded-3xl bg-primary-color px-10 py-2 font-bold text-white transition-colors duration-200 hover:bg-blue-400'
 					disabled={isLoading}
 				>
 					{isLoading ? <Spinner sm /> : `${btnText}`}

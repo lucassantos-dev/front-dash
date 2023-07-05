@@ -19,10 +19,6 @@ export default function LoginForm() {
 			labelId: 'password',
 			type: 'password',
 			value: password,
-			link: {
-				linkText: 'Forgot password?',
-				linkUrl: '/password-reset',
-			},
 			required: true,
 		},
 	];
@@ -31,7 +27,7 @@ export default function LoginForm() {
 		<Form
 			config={config}
 			isLoading={isLoading}
-			btnText='Sign in'
+			btnText='Entrar'
 			onChange={onChange}
 			onSubmit={onSubmit}
 		/>
