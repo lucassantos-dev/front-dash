@@ -1,5 +1,4 @@
 import { LoginForm } from '@/components/forms';
-// import { SocialButtons } from '@/components/common';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -16,7 +15,6 @@ export default function Page() {
 					<h1>Conecte-se</h1>
 				</div>
 				<div>
-
 					<LoginForm />
 				</div>
 			</div>
