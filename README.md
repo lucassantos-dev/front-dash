@@ -1,5 +1,3 @@
-# Full Auth
-
 To run the development server:
 
 ```bash

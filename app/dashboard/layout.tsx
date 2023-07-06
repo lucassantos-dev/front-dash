@@ -1,5 +1,5 @@
 import { RequireAuth } from '@/components/utils';
-
+import React from 'react';
 interface Props {
 	children: React.ReactNode;
 }

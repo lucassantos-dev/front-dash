@@ -1,5 +1,4 @@
 import { ChangeEvent } from 'react';
-import Link from 'next/link';
 
 interface Props {
 	labelId: string;
@@ -27,13 +26,13 @@ export default function Input({
 				>
 					{children}
 				</label>
-				
+
 			</div>
 			<div className='mt-2'>
 				<input
 					id={labelId}
 					className='block w-full rounded-2xl bg-slate-100 px-3 py-2 transition-colors 
-					duration-200  hover:bg-blue-200  focus:bg-blue-200 focus:outline-none'
+					duration-200  hover:bg-blue-200  focus:bg-blue-200 border-0 focus:outline-none'
 					name={labelId}
 					type={type}
 					onChange={onChange}
