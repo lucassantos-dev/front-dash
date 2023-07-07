@@ -1,25 +1,17 @@
 'use client';
-
+import { NavBar, Spinner } from '@/components/common';
 import { useRetrieveUserQuery } from '@/redux/features/authApiSlice';
-import { List, Spinner } from '@/components/common';
+import { RootState } from '@/redux/store';
+import { useSelector } from 'react-redux';
 
 export default function Page() {
 	const { data: user, isLoading, isFetching } = useRetrieveUserQuery();
+	const isOpen = useSelector((state: RootState) => state.siderbar.isOpen);
 
-	const config = [
-		{
-			label: 'First Name',
-			value: user?.first_name,
-		},
-		{
-			label: 'Last Name',
-			value: user?.last_name,
-		},
-		{
-			label: 'Email',
-			value: user?.email,
-		},
-	];
+	// Calculate width based on whether sidebar is open or not
+	const width = isOpen ? 'calc(100% - 300px)' : 'calc(100% - 80px)';
+	const transitionDuration = '0.4s' // ajuste esses valores conforme necessário
+	const is_delay = isOpen ? '0s' : '.6s';
 
 	if (isLoading || isFetching) {
 		return (
@@ -30,17 +22,14 @@ export default function Page() {
 	}
 
 	return (
-		<>
-			<header className='bg-white shadow'>
-				<div className='mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8'>
-					<h1 className='text-3xl font-bold tracking-tight text-gray-900'>
-						Dashboard
-					</h1>
-				</div>
-			</header>
-			<main className='mx-auto max-w-7xl py-6 my-8 sm:px-6 lg:px-8'>
-				<List config={config} />
-			</main>
-		</>
+		<div className='absolute right-0' style={{ width, transition: `width ${transitionDuration} linear`, transitionDelay: `${is_delay}` }}>
+			<NavBar />
+			<div className="flex flex-wrap p-4 px-20">
+				<div className="w-1/2 h-80 bg-red-500 rounded-3xl"></div>
+				<div className="w-1/2 h-80 bg-blue-500 rounded-3xl"></div>
+				<div className="w-1/2 h-80 bg-green-500 rounded-3xl"></div>
+				<div className="w-1/2 h-80 bg-yellow-500 rounded-3xl"></div>
+			</div>
+		</div>
 	);
 }

@@ -3,6 +3,7 @@ import { apiSlice } from '../services/apiSlice';
 interface User {
 	first_name: string;
 	last_name: string;
+	avatar: Blob
 	email: string;
 }
 

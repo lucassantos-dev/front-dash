@@ -1,4 +1,3 @@
-import { Footer, Navbar } from '@/components/common';
 import { Setup } from '@/components/utils';
 import Provider from '@/redux/provider';
 import '@/styles/globals.css';
@@ -22,11 +21,9 @@ export default function RootLayout({
 			<body className={montserrat.className}>
 				<Provider>
 					<Setup />
-					<Navbar />
-					<div className='mx-auto max-w-7xl'>
+					<div className=''>
 						{children}
 					</div>
-					<Footer />
 				</Provider>
 			</body>
 		</html>
